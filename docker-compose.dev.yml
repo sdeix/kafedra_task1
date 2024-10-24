@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  php:
+    build:
+      target: dev
+    ports:
+      - "9000:9000"
+
+  adminer:
+    image: adminer:4.8.0
+    container_name: adminer
+    restart: always
+    ports:
+      - "8081:8080"
+
+  proxy:
+    ports:
+      - "${NGINX_PORT}:80"

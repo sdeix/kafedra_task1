@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  php:
+    build:
+      target: prod
+    ports:
+      - "9000:9000"
+
+  proxy:
+    ports:
+      - "80:80"
