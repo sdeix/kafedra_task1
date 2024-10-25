@@ -6,7 +6,6 @@ RUN apk update && apk add --no-cache bash
 WORKDIR /var/www/html
 
 
-FROM base AS dev
 
 
 RUN apk add --no-cache $PHPIZE_DEPS linux-headers \
@@ -15,7 +14,3 @@ RUN apk add --no-cache $PHPIZE_DEPS linux-headers \
     && apk del $PHPIZE_DEPS
 
 
-FROM base AS prod
-
-RUN apk add --no-cache curl \
-    && docker-php-ext-install pdo pdo_mysql
