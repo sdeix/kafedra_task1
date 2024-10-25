@@ -9,11 +9,11 @@ services:
       - .env
 
   php:
+    container_name: php
     ports:
       - "9000:9000"
     build:
       context: ./php
-      target: dev
     volumes:
       - ../project:/var/www/html
     environment:
