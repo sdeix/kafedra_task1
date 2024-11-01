@@ -22,8 +22,6 @@ services:
     image: adminer:4.8.0
     container_name: adminer
     restart: always
-    ports:
-      - "8081:8080"
   proxy:
     image: nginx:1.25-alpine
     container_name: nginx
