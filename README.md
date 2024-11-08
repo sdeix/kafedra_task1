@@ -1,11 +1,9 @@
 # Запуск в dev окружении
-1) cd dev\
-
+cd dev\
 docker compose up -d
 
 # Запуск в prod окружении
-2) cd prod\
-
+cd prod\
 docker compose up -d
 
 # Настройка
