@@ -1,11 +1,10 @@
 # Запуск в dev окружении
-## 1) cd dev
-## docker compose up -d
-## Адрес: 127.0.0.1:8080
+1) cd dev
+docker compose up -d
 
 # Запуск в prod окружении
-## 2) cd prod
-## docker compose up -d
+2) cd prod
+docker compose up -d
 
 # Настройка
 Скопировать файл `.env.example` в `.env` и заполнить его:
