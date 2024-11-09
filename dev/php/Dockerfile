@@ -6,7 +6,6 @@ RUN apk update && apk add --no-cache bash
 WORKDIR /var/www/html
 
 
-FROM base AS dev
 
 
 RUN apk add --no-cache $PHPIZE_DEPS linux-headers \
@@ -14,8 +13,7 @@ RUN apk add --no-cache $PHPIZE_DEPS linux-headers \
     && docker-php-ext-enable xdebug \
     && apk del $PHPIZE_DEPS
 
-
-FROM base AS prod
-
-RUN apk add --no-cache curl \
-    && docker-php-ext-install pdo pdo_mysql
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+RUN php composer-setup.php
+RUN php -r "unlink('composer-setup.php');"
+RUN mv composer.phar /usr/local/bin/composer
